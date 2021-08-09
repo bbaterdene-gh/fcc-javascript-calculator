@@ -1,7 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import formulaScreenSlice from '../features/formulaScreenSlice';
+import outputScreenSlice from '../features/outputScreenSlice';
 
 export const store = configureStore({
   reducer: {
+    formulaScreen: formulaScreenSlice,
+    outputScreen: outputScreenSlice,
   },
 });
 
