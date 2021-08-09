@@ -4,14 +4,18 @@ import { RootState } from "../app/store";
 export const outputScreenSlice = createSlice({
   name: 'ouputScreen',
   initialState: {
-    value: '',
+    value: '0',
   },
   reducers: {
     addChar : (state, action: PayloadAction<string>) => {
-      state.value += action.payload
+      if ( state.value === '0' ) {
+        state.value = action.payload
+      } else {
+        state.value += action.payload
+      }
     },
     reset : (state) => {
-      state.value = ''
+      state.value = '0'
     },
   },
 })

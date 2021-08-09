@@ -13,9 +13,12 @@ export const formulaScreenSlice = createSlice({
     reset : (state) => {
       state.value = ''
     },
+    removeLastChar: (state) => {
+      if (state.value) state.value = state.value.slice(0, -1)
+    },
   },
 })
 
-export const { addChar, reset } = formulaScreenSlice.actions
+export const { addChar, reset, removeLastChar } = formulaScreenSlice.actions
 export const selectFormulaScreen = (state: RootState) => state.formulaScreen.value
 export default formulaScreenSlice.reducer;
