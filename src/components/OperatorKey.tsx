@@ -1,7 +1,7 @@
 
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { addChar, removeLastChar, selectFormulaScreen } from '../features/formulaScreenSlice'
-import { reset } from '../features/outputScreenSlice'
+import { reset, addChar as addCharToOutputScreen } from '../features/outputScreenSlice'
 
 export const OperatorKey = (props: OperatorKeyProps) => {
   const dispatch = useAppDispatch()
@@ -9,6 +9,7 @@ export const OperatorKey = (props: OperatorKeyProps) => {
 
   const handleClick = () => {
     dispatch(reset())
+    dispatch(addCharToOutputScreen('0'))
     if ( formulaScreen ) {
       if ( !Object.values(operatorKeys).includes(formulaScreen.slice(-1)) ) {
         dispatch(addChar(operatorKeys[props.children]))

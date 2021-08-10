@@ -1,5 +1,6 @@
 import { AllClearKey } from "./AllClearKey"
 import { DotKey } from "./DotKey"
+import { EqualKey } from "./EqualKey"
 import { NumberKey } from "./NumberKey"
 import { OperatorKey } from "./OperatorKey"
 import { ZeroKey } from "./ZeroKey"
@@ -21,7 +22,7 @@ export const Keys = () => {
       <NumberKey>1</NumberKey>
       <NumberKey>2</NumberKey>
       <NumberKey>3</NumberKey>
-      <div className="bg-prussian-blue row-span-2 flex items-center justify-center">=</div>
+      <EqualKey />
       <ZeroKey>0</ZeroKey>
       <DotKey>.</DotKey>
     </div>

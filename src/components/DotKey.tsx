@@ -11,7 +11,6 @@ export const DotKey = (props: DotKeyProps) => {
   const handleClick = () => {
     // */+-
     const joinedOperators = operators.join('')
-    console.log(joinedOperators)
     const re = new RegExp(`[${joinedOperators}]+`, "g")
     const numbers = formulaScreen.split(re)
     if (formulaScreen === '') {

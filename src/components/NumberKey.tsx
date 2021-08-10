@@ -7,6 +7,10 @@ export const NumberKey = (props: NumberKeyProps) => {
   const formulaScreen = useAppSelector(selectFormulaScreen)
   const outputScreen = useAppSelector(selectOutputScreen)
   const handleClick = () => {
+    if (formulaScreen.includes('=')) {
+      dispatch(resetFormulaScreen())
+      dispatch(resetOutputScreen())
+    }
     if (formulaScreen === '0') {
       dispatch(resetFormulaScreen())
     }
