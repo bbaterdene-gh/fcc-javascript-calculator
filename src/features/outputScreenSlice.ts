@@ -8,14 +8,10 @@ export const outputScreenSlice = createSlice({
   },
   reducers: {
     addChar : (state, action: PayloadAction<string>) => {
-      if ( state.value === '0' ) {
-        state.value = action.payload
-      } else {
-        state.value += action.payload
-      }
+      state.value += action.payload
     },
     reset : (state) => {
-      state.value = '0'
+      state.value = ''
     },
   },
 })

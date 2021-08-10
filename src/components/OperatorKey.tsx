@@ -6,12 +6,6 @@ import { reset } from '../features/outputScreenSlice'
 export const OperatorKey = (props: OperatorKeyProps) => {
   const dispatch = useAppDispatch()
   const formulaScreen = useAppSelector(selectFormulaScreen)
-  const operatorKeys: {[key: string]: string} = {
-    'x': '*',
-    '/': '/',
-    '+': '+',
-    '-': '-',
-  }
 
   const handleClick = () => {
     dispatch(reset())
@@ -34,4 +28,11 @@ export const OperatorKey = (props: OperatorKeyProps) => {
 
 interface OperatorKeyProps {
   children: string,
+}
+
+export const operatorKeys: {[key: string]: string} = {
+  'x': '*',
+  '/': '/',
+  '+': '+',
+  '-': '-',
 }

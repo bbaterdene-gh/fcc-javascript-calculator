@@ -1,14 +1,17 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks"
-import { addChar as addCharToFormula, reset, selectFormulaScreen } from "../features/formulaScreenSlice"
-import { addChar as addCharToOutput } from "../features/outputScreenSlice"
+import { addChar as addCharToFormula, reset as resetFormulaScreen, selectFormulaScreen } from "../features/formulaScreenSlice"
+import { addChar as addCharToOutput, reset as resetOutputScreen, selectOutputScreen } from "../features/outputScreenSlice"
 
 export const NumberKey = (props: NumberKeyProps) => {
   const dispatch = useAppDispatch()
   const formulaScreen = useAppSelector(selectFormulaScreen)
-
+  const outputScreen = useAppSelector(selectOutputScreen)
   const handleClick = () => {
     if (formulaScreen === '0') {
-      dispatch(reset())
+      dispatch(resetFormulaScreen())
+    }
+    if (outputScreen === '0') {
+      dispatch(resetOutputScreen())
     }
     dispatch(addCharToFormula(props.children))
     dispatch(addCharToOutput(props.children))

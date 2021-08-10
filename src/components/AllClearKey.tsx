@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppDispatch } from '../app/hooks'
 import { reset as resetFormulaScreen } from '../features/formulaScreenSlice'
-import { reset as resetOutputScreen } from '../features/outputScreenSlice'
+import { addChar, reset as resetOutputScreen } from '../features/outputScreenSlice'
 
 export const AllClearKey = () => {
   const dispatch = useAppDispatch()
@@ -9,6 +9,7 @@ export const AllClearKey = () => {
   const handleClick = () => {
     dispatch(resetFormulaScreen())
     dispatch(resetOutputScreen())
+    dispatch(addChar('0'))
   }
 
   return (
