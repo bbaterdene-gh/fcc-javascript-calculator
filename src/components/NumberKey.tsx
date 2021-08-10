@@ -22,7 +22,7 @@ export const NumberKey = (props: NumberKeyProps) => {
   }
 
   return (
-    <div className={`bg-charcoal flex items-center justify-center`} onClick={handleClick} id={props.id}>
+    <div className={`bg-charcoal flex items-center justify-center hover:outline-grey`} onClick={handleClick} id={props.id}>
       {props.children}
     </div>
   )

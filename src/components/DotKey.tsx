@@ -27,7 +27,7 @@ export const DotKey = (props: DotKeyProps) => {
   }
 
   return (
-    <div className={`bg-charcoal flex items-center justify-center`} onClick={handleClick} id="decimal">
+    <div className={`bg-charcoal flex items-center justify-center hover:outline-grey`} onClick={handleClick} id="decimal">
       {props.children}
     </div>
   )

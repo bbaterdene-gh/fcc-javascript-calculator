@@ -19,10 +19,15 @@ module.exports = {
       spacing: {
         '0.25': '0.0625rem',
       },
+      outline: {
+        grey: '0.05em solid grey',
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      outline: ['hover',],
+    },
   },
   plugins: [],
 }
