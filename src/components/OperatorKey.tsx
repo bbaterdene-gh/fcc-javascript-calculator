@@ -20,17 +20,28 @@ export const OperatorKey = (props: OperatorKeyProps) => {
     dispatch(reset())
     dispatch(addCharToOutputScreen('0'))
     if ( formulaScreen ) {
-      if ( !Object.values(operatorKeys).includes(formulaScreen.slice(-1)) ) {
+      if ( !Object.values(operatorKeys).includes(formulaScreen.slice(-1))) {
         dispatch(addChar(operatorKeys[props.children]))
       } else {
-        dispatch(removeLastChar())
+        const lastOneWithChildren = formulaScreen.slice(-1) + props.children
+        const lastTwo = formulaScreen.slice(-2)
+        const regex = new RegExp(`[^-]-`)
+        const joinedOperators = Object.values(operatorKeys).join('')
+        const regexLastTwo = new RegExp(`[${joinedOperators}]{2}`)
+        if (regexLastTwo.test(lastTwo)) {
+          dispatch(removeLastChar())
+          dispatch(removeLastChar())
+          dispatch(addChar(operatorKeys[props.children]))
+        }
+
+        if( !regex.test(lastOneWithChildren) || props.children !== '-') dispatch(removeLastChar())
         dispatch(addChar(operatorKeys[props.children]))
       }
     }
   }
 
   return (
-    <div className="bg-dim-gray flex items-center justify-center" onClick={handleClick}>
+    <div className="bg-dim-gray flex items-center justify-center" onClick={handleClick} id={props.id}>
       {props.children}
     </div>
   )
@@ -38,6 +49,7 @@ export const OperatorKey = (props: OperatorKeyProps) => {
 
 interface OperatorKeyProps {
   children: string,
+  id: string,
 }
 
 export const operatorKeys: {[key: string]: string} = {

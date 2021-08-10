@@ -9,21 +9,21 @@ export const Keys = () => {
   return (
     <div className="text-white font-share-tech-mono w-full h-full grid grid-cols-4 grid-rows-5 text-xl gap-0.25">
       <AllClearKey />
-      <OperatorKey>/</OperatorKey>
-      <OperatorKey>x</OperatorKey>
-      <NumberKey>7</NumberKey>
-      <NumberKey>8</NumberKey>
-      <NumberKey>9</NumberKey>
-      <OperatorKey>-</OperatorKey>
-      <NumberKey>4</NumberKey>
-      <NumberKey>5</NumberKey>
-      <NumberKey>6</NumberKey>
-      <OperatorKey>+</OperatorKey>
-      <NumberKey>1</NumberKey>
-      <NumberKey>2</NumberKey>
-      <NumberKey>3</NumberKey>
+      <OperatorKey id="divide">/</OperatorKey>
+      <OperatorKey id="multiply">x</OperatorKey>
+      <NumberKey id="seven">7</NumberKey>
+      <NumberKey id="eight">8</NumberKey>
+      <NumberKey id="nine">9</NumberKey>
+      <OperatorKey id="subtract">-</OperatorKey>
+      <NumberKey id="four">4</NumberKey>
+      <NumberKey id="five">5</NumberKey>
+      <NumberKey id="six">6</NumberKey>
+      <OperatorKey id="add">+</OperatorKey>
+      <NumberKey id="one">1</NumberKey>
+      <NumberKey id="two">2</NumberKey>
+      <NumberKey id="three">3</NumberKey>
       <EqualKey />
-      <ZeroKey>0</ZeroKey>
+      <ZeroKey id="zero">0</ZeroKey>
       <DotKey>.</DotKey>
     </div>
   )

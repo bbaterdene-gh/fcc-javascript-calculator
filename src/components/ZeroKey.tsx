@@ -18,7 +18,7 @@ export const ZeroKey = (props: ZeroKeyProps) => {
   }
 
   return (
-    <div className="bg-charcoal col-span-2 flex items-center justify-center" onClick={handleClick}>
+    <div className="bg-charcoal col-span-2 flex items-center justify-center" onClick={handleClick} id={props.id}>
       {props.children}
     </div>
   )
@@ -26,4 +26,5 @@ export const ZeroKey = (props: ZeroKeyProps) => {
 
 interface ZeroKeyProps {
   children: string,
+  id: string,
 }

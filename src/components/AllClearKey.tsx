@@ -13,7 +13,7 @@ export const AllClearKey = () => {
   }
 
   return (
-    <div className="col-span-2 bg-medium-carmine flex items-center justify-center" onClick={handleClick}>
+    <div className="col-span-2 bg-medium-carmine flex items-center justify-center" onClick={handleClick} id="clear">
       AC
     </div>
   )

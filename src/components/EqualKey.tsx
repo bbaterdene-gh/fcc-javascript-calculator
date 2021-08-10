@@ -17,7 +17,7 @@ export const EqualKey = () => {
   }
 
   return (
-    <div className="bg-prussian-blue row-span-2 flex items-center justify-center" onClick={handleClick}>
+    <div className="bg-prussian-blue row-span-2 flex items-center justify-center" onClick={handleClick} id="equals">
       =
     </div>
   )

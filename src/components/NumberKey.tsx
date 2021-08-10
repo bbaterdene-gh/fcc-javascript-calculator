@@ -22,7 +22,7 @@ export const NumberKey = (props: NumberKeyProps) => {
   }
 
   return (
-    <div className={`bg-charcoal flex items-center justify-center`} onClick={handleClick}>
+    <div className={`bg-charcoal flex items-center justify-center`} onClick={handleClick} id={props.id}>
       {props.children}
     </div>
   )
@@ -30,4 +30,5 @@ export const NumberKey = (props: NumberKeyProps) => {
 
 interface NumberKeyProps {
   children: string,
+  id: string,
 }
