@@ -8,6 +8,7 @@ export const EqualKey = () => {
   const dispatch = useAppDispatch()
 
   const handleClick = () => {
+    if ( formulaScreen.includes('=') ) return
     const value = evaluate(formulaScreen)
     dispatch(reset())
     dispatch(addCharToOutputScreen(value))

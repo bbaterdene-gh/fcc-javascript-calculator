@@ -1,13 +1,22 @@
 
 import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { addChar, removeLastChar, selectFormulaScreen } from '../features/formulaScreenSlice'
-import { reset, addChar as addCharToOutputScreen } from '../features/outputScreenSlice'
+import { addChar, removeLastChar, selectFormulaScreen, reset as resetFormulaScreen } from '../features/formulaScreenSlice'
+import { reset, addChar as addCharToOutputScreen, selectOutputScreen } from '../features/outputScreenSlice'
 
 export const OperatorKey = (props: OperatorKeyProps) => {
   const dispatch = useAppDispatch()
   const formulaScreen = useAppSelector(selectFormulaScreen)
+  const outputScreen = useAppSelector(selectOutputScreen)
 
   const handleClick = () => {
+    if ( formulaScreen.includes('=')) {
+      dispatch(resetFormulaScreen())
+      dispatch(addChar(outputScreen))
+      dispatch(addChar(operatorKeys[props.children]))
+      dispatch(reset())
+      dispatch(addCharToOutputScreen('0'))
+      return
+    }
     dispatch(reset())
     dispatch(addCharToOutputScreen('0'))
     if ( formulaScreen ) {
